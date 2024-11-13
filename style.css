@@ -1,0 +1,95 @@
+body {
+    background-image: url(img/stadum.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.kvara {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 400px;
+    left: 800px;
+    animation: holdBall 3s linear forwards, shootBall 3s 3s linear forwards;
+}
+
+.ramos {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 400px;
+    left: 1200px; /* Positioned further from Kvara */
+    animation: shake 1s infinite;
+}
+
+.vandick {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 400px;
+    left: 1400px; /* Positioned further from Kvara */
+    animation: shake 1s infinite;
+}
+
+.ball {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 600px;
+    left: 850px; /* Initially at Kvara's feet */
+    animation: holdBall 3s linear forwards, curveShot 2s 3s linear forwards;
+}
+
+.door {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+}
+
+/* Keyframes */
+@keyframes holdBall {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(0); /* Hold position */
+    }
+}
+
+@keyframes shootBall {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-200px); /* Moves Kvara slightly left */
+    }
+}
+
+@keyframes curveShot {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-300px, -50px); /* Curve up */
+    }
+    100% {
+        transform: translate(-620px, -130px); /* Curve to the door */
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+}
